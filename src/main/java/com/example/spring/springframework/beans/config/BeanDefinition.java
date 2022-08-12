@@ -1,5 +1,8 @@
 package com.example.spring.springframework.beans.config;
 
+
+import com.example.spring.springframework.beans.PropertyValues;
+
 /**
  * bean的定义
  */
@@ -12,8 +15,11 @@ public class BeanDefinition {
      */
     private Class beanClass;
 
+
     public BeanDefinition(Class beanClass) {
         this.beanClass = beanClass;
+        ////加入bean的引用
+        this.propertyValues = new PropertyValues();
     }
 
 
@@ -24,5 +30,24 @@ public class BeanDefinition {
     public void setBeanClass(Class beanClass) {
         this.beanClass = beanClass;
     }
+
+    //--------------------------------------------------
+    //加入bean的引用
+    private PropertyValues propertyValues;
+
+
+    public BeanDefinition(Class beanClass, PropertyValues propertyValues) {
+        this.beanClass = beanClass;
+        this.propertyValues = propertyValues != null ? propertyValues : new PropertyValues();
+    }
+
+    public PropertyValues getPropertyValues() {
+        return propertyValues;
+    }
+
+    public void setPropertyValues(PropertyValues propertyValues) {
+        this.propertyValues = propertyValues;
+    }
+
 
 }
