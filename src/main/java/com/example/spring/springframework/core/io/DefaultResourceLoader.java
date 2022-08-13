@@ -4,6 +4,7 @@ import cn.hutool.core.lang.Assert;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+
 public class DefaultResourceLoader implements ResourceLoader {
 
     @Override
@@ -21,4 +22,5 @@ public class DefaultResourceLoader implements ResourceLoader {
             }
         }
     }
+
 }

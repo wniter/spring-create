@@ -1,10 +1,21 @@
 package com.example.spring.springframework.context.support;
 
-import com.example.spring.springframework.beans.exception.BeansException;
+import com.example.spring.springframework.beans.BeansException;
 import com.example.spring.springframework.beans.factory.ConfigurableListableBeanFactory;
-import com.example.spring.springframework.beans.support.DefaultListableBeanFactory;
+import com.example.spring.springframework.beans.factory.support.DefaultListableBeanFactory;
 
-public abstract class AbstractRefreshableApplicationContext extends AbstractApplicationContext{
+/**
+ * Base class for {@link com.example.spring.springframework.context.ApplicationContext}
+ * implementations which are supposed to support multiple calls to {@link #refresh()},
+ * creating a new internal bean factory instance every time.
+ * Typically (but not necessarily), such a context will be driven by
+ * a set of config locations to load bean definitions from.
+ *
+ * 博客：https://bugstack.cn - 沉淀、分享、成长，让自己和他人都能有所收获！
+ * 公众号：bugstack虫洞栈
+ * Create by 小傅哥(fustack)
+ */
+public abstract class AbstractRefreshableApplicationContext extends AbstractApplicationContext {
 
     private DefaultListableBeanFactory beanFactory;
 

@@ -1,13 +1,21 @@
 package com.example.spring.springframework.context.support;
 
-import com.example.spring.springframework.beans.exception.BeansException;
-
-import java.util.Map;
+import com.example.spring.springframework.beans.BeansException;
 
 /**
- * xml 文件应用上下文 集成 AbstractXmlApplicationContext
+ * Standalone XML application context, taking the context definition files
+ * from the class path, interpreting plain paths as class path resource names
+ * that include the package path (e.g. "mypackage/myresource.txt"). Useful for
+ * test harnesses as well as for application contexts embedded within JARs.
+ * <p>
+ * XML 文件应用上下文
+ * <p>
+ * 博客：https://bugstack.cn - 沉淀、分享、成长，让自己和他人都能有所收获！
+ * 公众号：bugstack虫洞栈
+ * Create by 小傅哥(fustack)
  */
-public class ClassPathXmlApplicationContext extends  AbstractXmlApplicationContext{
+public class ClassPathXmlApplicationContext extends AbstractXmlApplicationContext {
+
     private String[] configLocations;
 
     public ClassPathXmlApplicationContext() {

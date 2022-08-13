@@ -3,9 +3,9 @@ package com.example.spring.test.common;
 
 import com.example.spring.springframework.beans.PropertyValue;
 import com.example.spring.springframework.beans.PropertyValues;
-import com.example.spring.springframework.beans.config.BeanDefinition;
-import com.example.spring.springframework.beans.config.BeanFactoryPostProcessor;
-import com.example.spring.springframework.beans.exception.BeansException;
+import com.example.spring.springframework.beans.factory.config.BeanDefinition;
+import com.example.spring.springframework.beans.factory.config.BeanFactoryPostProcessor;
+import com.example.spring.springframework.beans.BeansException;
 import com.example.spring.springframework.beans.factory.ConfigurableListableBeanFactory;
 
 public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {

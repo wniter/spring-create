@@ -7,7 +7,6 @@ import java.io.InputStream;
 
 public class FileSystemResource implements Resource {
 
-
     private final File file;
 
     private final String path;
@@ -30,4 +29,5 @@ public class FileSystemResource implements Resource {
     public final String getPath() {
         return this.path;
     }
+
 }

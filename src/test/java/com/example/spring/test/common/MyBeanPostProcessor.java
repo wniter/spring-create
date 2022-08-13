@@ -1,8 +1,8 @@
 package com.example.spring.test.common;
 
 
-import com.example.spring.springframework.beans.config.BeanPostProcessor;
-import com.example.spring.springframework.beans.exception.BeansException;
+import com.example.spring.springframework.beans.factory.config.BeanPostProcessor;
+import com.example.spring.springframework.beans.BeansException;
 import com.example.spring.test.bean.UserService;
 
 public class MyBeanPostProcessor implements BeanPostProcessor {

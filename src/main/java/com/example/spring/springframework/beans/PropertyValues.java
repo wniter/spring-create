@@ -1,43 +1,33 @@
 package com.example.spring.springframework.beans;
 
-import com.example.spring.springframework.beans.exception.BeansException;
-
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * bean的属性list集合信息
+ * 博客：https://bugstack.cn - 沉淀、分享、成长，让自己和他人都能有所收获！
+ * 公众号：bugstack虫洞栈
+ * Create by 小傅哥(fustack)
  */
 public class PropertyValues {
+
     private final List<PropertyValue> propertyValueList = new ArrayList<>();
 
-    /**
-     * 添加PropertyValue属性
-     */
-    public void addPropertyValue(PropertyValue propertyValue) {
-        this.propertyValueList.add(propertyValue);
-    }
-
-    /**
-     * 获得PropertyValues
-     *
-     * @return PropertyValue数组
-     */
-    public PropertyValue[] getPropertyValues() {
-        if (propertyValueList == null && propertyValueList.isEmpty()) {
-            throw new BeansException("this is propertyValueList is null");
-        } else {
-            return this.propertyValueList.toArray(new PropertyValue[0]);
+    public void addPropertyValue(PropertyValue pv) {
+        for (int i = 0; i < this.propertyValueList.size(); i++) {
+            PropertyValue currentPv = this.propertyValueList.get(i);
+            if (currentPv.getName().equals(pv.getName())) {
+                // 覆盖原有的属性值
+                this.propertyValueList.set(i, pv);
+                return;
+            }
         }
-
+        this.propertyValueList.add(pv);
     }
 
-    /**
-     * 获得PropertyValue
-     *
-     * @param propertyName
-     * @return
-     */
+    public PropertyValue[] getPropertyValues() {
+        return this.propertyValueList.toArray(new PropertyValue[0]);
+    }
+
     public PropertyValue getPropertyValue(String propertyName) {
         for (PropertyValue pv : this.propertyValueList) {
             if (pv.getName().equals(propertyName)) {
@@ -47,17 +37,4 @@ public class PropertyValues {
         return null;
     }
 
-    /**
-     * 直接返回propertyValueList
-     * 有问题，如果没有add,这个集合就是空的
-     *
-     * @return
-     */
-    public List<PropertyValue> getPropertyValueList() {
-        if (propertyValueList == null && propertyValueList.isEmpty()) {
-            throw new BeansException("this is propertyValueList is null");
-        } else {
-            return this.propertyValueList;
-        }
-    }
 }
