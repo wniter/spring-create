@@ -1,5 +1,7 @@
-package com.example.spring.test;
+package com.example.spring.test.bean;
 
+
+import com.example.spring.test.bean.UserDao;
 
 public class UserService {
     /**
@@ -59,5 +61,25 @@ public class UserService {
 
     public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
+    }
+
+    //------------------
+    private String company;
+    private String location;
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }

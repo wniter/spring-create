@@ -1,6 +1,7 @@
 package com.example.spring.springframework.beans.support;
 
 import com.example.spring.springframework.beans.config.BeanDefinition;
+import com.example.spring.springframework.beans.config.BeanPostProcessor;
 import com.example.spring.springframework.beans.exception.BeansException;
 import com.example.spring.springframework.beans.factory.ConfigurableListableBeanFactory;
 
@@ -44,6 +45,12 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
         if (beanDefinition == null) throw new BeansException("No bean named '" + beanName + "' is defined");
         return beanDefinition;
     }
+
+    @Override
+    public void preInstantiateSingletons() throws BeansException {
+        beanDefinitionMap.keySet().forEach(this::getBean);
+    }
+
 
 }
 

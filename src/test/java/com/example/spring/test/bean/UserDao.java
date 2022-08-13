@@ -1,4 +1,4 @@
-package com.example.spring.test;
+package com.example.spring.test.bean;
 
 import java.util.HashMap;
 import java.util.Map;

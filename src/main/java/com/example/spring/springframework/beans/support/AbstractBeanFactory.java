@@ -1,13 +1,21 @@
 package com.example.spring.springframework.beans.support;
 
 import com.example.spring.springframework.beans.config.BeanDefinition;
+import com.example.spring.springframework.beans.config.BeanPostProcessor;
 import com.example.spring.springframework.beans.exception.BeansException;
 import com.example.spring.springframework.beans.factory.BeanFactory;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * BeanFactory的抽象类，用于函数的具体实现
  */
 public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry implements BeanFactory {
+
+
+    /** BeanPostProcessors to apply in createBean */
+    private final List<BeanPostProcessor> beanPostProcessors = new ArrayList<BeanPostProcessor>();
 
     @Override
     public Object getBean(String name) throws BeansException {
@@ -54,6 +62,20 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
     @Override
     public <T> T getBean(String name, Class<T> requiredType) throws BeansException {
         return (T) getBean(name);
+    }
+
+
+//    @Override
+    public void addBeanPostProcessor(BeanPostProcessor beanPostProcessor){
+        this.beanPostProcessors.remove(beanPostProcessor);
+        this.beanPostProcessors.add(beanPostProcessor);
+    }
+    /**
+     * Return the list of BeanPostProcessors that will get applied
+     * to beans created with this factory.
+     */
+    public List<BeanPostProcessor> getBeanPostProcessors() {
+        return this.beanPostProcessors;
     }
 
 
