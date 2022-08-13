@@ -92,8 +92,9 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 //            使用选择
 //            3.1，果元素个数是固定的推荐用数组
 //            3.2，如果元素个数不是固定的推荐用集合
-            for (PropertyValue propertyValue : propertyValues.getPropertyValueList()) {
-//            for (PropertyValue propertyValue : propertyValues.getPropertyValues()) {
+//            这个地方用数组好点，因为多个bean注入也是用的数组
+//            for (PropertyValue propertyValue : propertyValues.getPropertyValueList()) {
+            for (PropertyValue propertyValue : propertyValues.getPropertyValues()) {
                 String name = propertyValue.getName();
                 Object value = propertyValue.getValue();
 

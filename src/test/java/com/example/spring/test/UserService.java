@@ -35,6 +35,14 @@ public class UserService {
 
         System.out.println("查询用户信息");
         System.out.println("查询用户信息：" + userDao.queryUserName(uId));
+
+    }
+
+    public String queryUserInfo02() {
+
+        System.out.println("查询用户信息");
+        System.out.println("查询用户信息：" + userDao.queryUserName(uId));
+        return null;
     }
 
     public String getuId() {
