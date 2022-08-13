@@ -7,12 +7,13 @@ import com.example.spring.springframework.aop.framework.Cglib2AopProxy;
 import com.example.spring.springframework.context.support.ClassPathXmlApplicationContext;
 import com.example.spring.springframework.jdbc.datasource.DataSourceTransactionManager;
 import com.example.spring.springframework.jdbc.support.JdbcTemplate;
-import com.example.spring.springframework.test.service.impl.JdbcServiceImpl;
+//import com.example.spring.springframework.test.service.impl.JdbcServiceImpl;
 import com.example.spring.springframework.tx.transaction.annotation.AnnotationTransactionAttributeSource;
 import com.example.spring.springframework.tx.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor;
 import com.example.spring.springframework.tx.transaction.interceptor.TransactionAttribute;
 import com.example.spring.springframework.tx.transaction.interceptor.TransactionInterceptor;
 import com.alibaba.druid.pool.DruidDataSource;
+import com.example.spring.test.service.impl.JdbcServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 

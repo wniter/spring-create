@@ -2,8 +2,9 @@ package com.example.spring.test.service.impl;
 
 
 import com.example.spring.springframework.jdbc.support.JdbcTemplate;
-import com.example.spring.springframework.test.service.JdbcService;
+//import com.example.spring.springframework.test.service.JdbcService;
 import com.example.spring.springframework.tx.transaction.annotation.Transactional;
+import com.example.spring.test.service.JdbcService;
 
 import java.sql.SQLException;
 import java.sql.Statement;
